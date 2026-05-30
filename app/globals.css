@@ -1,0 +1,475 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.08 0.012 150);
+  --foreground: oklch(0.95 0.005 90);
+  --card: oklch(0.10 0.015 150);
+  --card-foreground: oklch(0.95 0.005 90);
+  --popover: oklch(0.10 0.015 150);
+  --popover-foreground: oklch(0.95 0.005 90);
+  --primary: oklch(0.78 0.08 75);
+  --primary-foreground: oklch(0.12 0.015 145);
+  --secondary: oklch(0.15 0.015 150);
+  --secondary-foreground: oklch(0.95 0.005 90);
+  --muted: oklch(0.22 0.015 150);
+  --muted-foreground: oklch(0.60 0.01 90);
+  --accent: oklch(0.75 0.06 75);
+  --accent-foreground: oklch(0.12 0.015 145);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.20 0.015 150);
+  --input: oklch(0.18 0.015 150);
+  --ring: oklch(0.75 0.06 75);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.08 0.012 150);
+  --sidebar-foreground: oklch(0.95 0.005 90);
+  --sidebar-primary: oklch(0.78 0.08 75);
+  --sidebar-primary-foreground: oklch(0.12 0.015 145);
+  --sidebar-accent: oklch(0.12 0.015 150);
+  --sidebar-accent-foreground: oklch(0.95 0.005 90);
+  --sidebar-border: oklch(0.18 0.015 150);
+  --sidebar-ring: oklch(0.75 0.06 75);
+  
+  /* Quiet Luxury colors */
+  --gold-metallic: #D4B270;
+  --champagne: #C5A880;
+  --warm-gray: #8A8279;
+}
+
+.dark {
+  --background: oklch(0.08 0.012 150);
+  --foreground: oklch(0.95 0.005 90);
+  --card: oklch(0.10 0.015 150);
+  --card-foreground: oklch(0.95 0.005 90);
+  --popover: oklch(0.10 0.015 150);
+  --popover-foreground: oklch(0.95 0.005 90);
+  --primary: oklch(0.78 0.08 75);
+  --primary-foreground: oklch(0.12 0.015 145);
+  --secondary: oklch(0.15 0.015 150);
+  --secondary-foreground: oklch(0.95 0.005 90);
+  --muted: oklch(0.22 0.015 150);
+  --muted-foreground: oklch(0.60 0.01 90);
+  --accent: oklch(0.75 0.06 75);
+  --accent-foreground: oklch(0.12 0.015 145);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.20 0.015 150);
+  --input: oklch(0.18 0.015 150);
+  --ring: oklch(0.75 0.06 75);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.08 0.012 150);
+  --sidebar-foreground: oklch(0.95 0.005 90);
+  --sidebar-primary: oklch(0.78 0.08 75);
+  --sidebar-primary-foreground: oklch(0.12 0.015 145);
+  --sidebar-accent: oklch(0.12 0.015 150);
+  --sidebar-accent-foreground: oklch(0.95 0.005 90);
+  --sidebar-border: oklch(0.18 0.015 150);
+  --sidebar-ring: oklch(0.75 0.06 75);
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', sans-serif;
+  --font-serif: 'Playfair Display', 'Georgia', serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ========================================
+   ARCHITECTURAL BLUEPRINT GRID SYSTEM
+   ======================================== */
+
+.blueprint-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.blueprint-grid-dense {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to right, rgba(212, 178, 112, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 178, 112, 0.015) 1px, transparent 1px);
+  background-size: 30px 30px, 30px 30px, 120px 120px, 120px 120px;
+}
+
+.blueprint-grid-gold {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(to right, rgba(212, 178, 112, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 178, 112, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ========================================
+   TYPOGRAPHIC WATERMARKS
+   ======================================== */
+
+.watermark {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.8;
+  white-space: nowrap;
+}
+
+.watermark-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.watermark-fade {
+  opacity: 0.015;
+  color: white;
+}
+
+.watermark-gold {
+  opacity: 0.02;
+  color: var(--gold-metallic);
+}
+
+/* ========================================
+   ANIMATED FOG/MIST SYSTEM
+   ======================================== */
+
+@keyframes fogDrift {
+  0% { transform: translate(-10%, -5%) scale(1); opacity: 0.12; }
+  50% { transform: translate(5%, 5%) scale(1.05); opacity: 0.22; }
+  100% { transform: translate(-10%, -5%) scale(1); opacity: 0.12; }
+}
+
+@keyframes fogDriftReverse {
+  0% { transform: translate(10%, 5%) scale(1.02); opacity: 0.15; }
+  50% { transform: translate(-8%, -3%) scale(1); opacity: 0.08; }
+  100% { transform: translate(10%, 5%) scale(1.02); opacity: 0.15; }
+}
+
+@keyframes fogDriftSlow {
+  0% { transform: translate(0%, 0%) scale(1); opacity: 0.18; }
+  33% { transform: translate(-5%, 3%) scale(1.03); opacity: 0.12; }
+  66% { transform: translate(3%, -2%) scale(0.98); opacity: 0.20; }
+  100% { transform: translate(0%, 0%) scale(1); opacity: 0.18; }
+}
+
+.fog-layer {
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+
+.fog-layer-1 {
+  inset: -20%;
+  background: radial-gradient(ellipse 80% 60% at 30% 40%, rgba(197, 168, 128, 0.08) 0%, transparent 60%);
+  filter: blur(100px);
+  animation: fogDrift 25s ease-in-out infinite;
+}
+
+.fog-layer-2 {
+  inset: -15%;
+  background: radial-gradient(ellipse 70% 50% at 70% 60%, rgba(212, 178, 112, 0.06) 0%, transparent 55%);
+  filter: blur(120px);
+  animation: fogDriftReverse 30s ease-in-out infinite;
+}
+
+.fog-layer-3 {
+  inset: -10%;
+  background: radial-gradient(ellipse 90% 70% at 50% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
+  filter: blur(80px);
+  animation: fogDriftSlow 40s ease-in-out infinite;
+}
+
+/* ========================================
+   SCROLL REVEAL ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-scale {
+  opacity: 0;
+  animation: fadeInScale 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-delay-1 { animation-delay: 0.1s; }
+.reveal-delay-2 { animation-delay: 0.2s; }
+.reveal-delay-3 { animation-delay: 0.3s; }
+.reveal-delay-4 { animation-delay: 0.4s; }
+.reveal-delay-5 { animation-delay: 0.5s; }
+
+/* ========================================
+   GEOMETRIC CLIP-PATHS
+   ======================================== */
+
+.clip-triangle-up { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+.clip-triangle-down { clip-path: polygon(0% 0%, 100% 0%, 50% 100%); }
+.clip-triangle-left { clip-path: polygon(100% 0%, 0% 50%, 100% 100%); }
+.clip-triangle-right { clip-path: polygon(0% 0%, 100% 50%, 0% 100%); }
+.clip-diamond { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+
+/* ========================================
+   QUIET LUXURY BUTTON STYLES
+   ======================================== */
+
+.btn-quiet-luxury {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--gold-metallic);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-quiet-luxury::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle at center, rgba(212, 178, 112, 0.15) 0%, transparent 60%);
+  opacity: 0;
+  filter: blur(30px);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.btn-quiet-luxury:hover::before { opacity: 1; }
+.btn-quiet-luxury:hover {
+  border-color: rgba(212, 178, 112, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ========================================
+   ELEGANT SHAPE BORDERS
+   ======================================== */
+
+.shape-border-gold { position: relative; }
+.shape-border-gold::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(212, 178, 112, 0.25);
+  pointer-events: none;
+}
+
+.shape-border-gold.clip-triangle-up::after { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+.shape-border-gold.clip-triangle-down::after { clip-path: polygon(0% 0%, 100% 0%, 50% 100%); }
+.shape-border-gold.clip-diamond::after { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+
+.shape-border-subtle { position: relative; }
+.shape-border-subtle::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.shape-border-subtle.clip-triangle-up::after { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+.shape-border-subtle.clip-triangle-down::after { clip-path: polygon(0% 0%, 100% 0%, 50% 100%); }
+.shape-border-subtle.clip-diamond::after { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+
+/* ========================================
+   SPEC GRID CARDS
+   ======================================== */
+
+.spec-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.spec-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(212, 178, 112, 0.15);
+}
+
+/* ========================================
+   COORDINATE MARKERS
+   ======================================== */
+
+.coord-marker {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(212, 178, 112, 0.3);
+}
+
+.compass-marker {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* ========================================
+   DEEP GRADIENT BACKGROUNDS
+   ======================================== */
+
+.bg-deep-forest {
+  background: linear-gradient(180deg, #0A0D0B 0%, #080B09 30%, #070908 60%, #050706 100%);
+}
+
+.bg-section-gradient {
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 13, 11, 0.5) 50%, transparent 100%);
+}
+
+/* ========================================
+   NAVIGATION STYLES
+   ======================================== */
+
+.nav-item {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 0%;
+  background: linear-gradient(180deg, transparent, var(--gold-metallic), transparent);
+  transition: height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-item.active::before { height: 70%; }
+.nav-item.active .nav-label { color: var(--gold-metallic); }
+.nav-item.active .nav-number { color: var(--gold-metallic); opacity: 0.7; }
+
+/* ========================================
+   SMOOTH TRANSITIONS & UTILITIES
+   ======================================== */
+
+.transition-luxury { transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.hover-lift { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.hover-lift:hover { transform: translateY(-4px); }
+.parallax-slow { will-change: transform; }
+
+/* ========================================
+   TYPOGRAPHY REFINEMENTS
+   ======================================== */
+
+.text-metallic-gold { color: var(--gold-metallic); }
+.text-champagne { color: var(--champagne); }
+.heading-editorial { font-weight: 700; letter-spacing: -0.03em; line-height: 0.9; }
+.text-subtle-depth { text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3); }
+
+/* ========================================
+   OVERLAPPING LAYER UTILITIES
+   ======================================== */
+
+.overlap-left { margin-left: -3rem; }
+.overlap-right { margin-right: -3rem; }
+.overlap-up { margin-top: -2rem; }
+.overlap-down { margin-bottom: -2rem; }
+
+@media (min-width: 1024px) {
+  .lg\:overlap-left { margin-left: -5rem; }
+  .lg\:overlap-right { margin-right: -5rem; }
+  .lg\:overlap-up { margin-top: -4rem; }
+}
+
+/* ========================================
+   AMBIENT GLOW EFFECTS
+   ======================================== */
+
+.ambient-glow {
+  position: relative;
+}
+
+.ambient-glow::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle at center, rgba(212, 178, 112, 0.08) 0%, transparent 50%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: -1;
+}
