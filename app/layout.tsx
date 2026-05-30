@@ -14,7 +14,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'ДОМИК В ЛЕСУ | Luxury Forest Cabin Retreat',
+  title: 'The Cabin | Luxury Forest Escape',
   description: 'Escape the city hustle. Premium A-frame cabin in the misty forest for your perfect retreat.',
   generator: 'v0.app',
   icons: {
